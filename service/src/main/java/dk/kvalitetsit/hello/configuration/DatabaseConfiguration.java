@@ -1,7 +1,7 @@
 package dk.kvalitetsit.hello.configuration;
 
-import dk.kvalitetsit.hello.dao.HelloDao;
-import dk.kvalitetsit.hello.dao.HelloDaoImpl;
+import dk.kvalitetsit.hello.dao.TrivyDao;
+import dk.kvalitetsit.hello.dao.TrivyDaoImpl;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,8 +14,8 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class DatabaseConfiguration {
     @Bean
-    public HelloDao helloDao(DataSource dataSource) {
-        return new HelloDaoImpl(dataSource);
+    public TrivyDao trivyDao(DataSource dataSource) {
+        return new TrivyDaoImpl(dataSource);
     }
 
     @Bean
