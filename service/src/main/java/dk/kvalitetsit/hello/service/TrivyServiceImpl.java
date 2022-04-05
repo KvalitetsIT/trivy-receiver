@@ -25,6 +25,7 @@ public class TrivyServiceImpl implements TrivyService {
         var map = new HashMap<String, AtomicInteger>();
         input.getResults()
                 .stream()
+                .filter(x -> x.getVulnerabilities() != null)
                 .map(Result::getVulnerabilities)
                 .flatMap(Collection::stream)
                 .forEach(vuln -> map.computeIfAbsent(vuln.getSeverity(), (x) -> new AtomicInteger(0)).addAndGet(1));
