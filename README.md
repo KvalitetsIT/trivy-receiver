@@ -1,3 +1,4 @@
+
 ![Build Status](https://github.com/KvalitetsIT/trivy-receiver/workflows/CICD/badge.svg)
 # trivy-receiver
 
